@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.venv/
+.uv/
+.DS_Store
+.idea/
+.vscode/
+pgdata/
+n8n_data/
+dist/
+build/
+coverage/
+htmlcov/
+.python-version
+
+# Logs
+*.log
