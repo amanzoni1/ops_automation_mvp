@@ -11,13 +11,13 @@ Lean ops automation stack for a family office. Ingests inbound requests, creates
 ## Architecture
 ```mermaid
 graph TD
-  Slack[Slack or Webhook] --> n8nInbound[n8n Inbound]
-  n8nInbound --> Backend[FastAPI Backend]
-  Backend -->|RAG (pgvector)| Postgres[(Postgres + pgvector)]
-  Backend -->|Create Task| Todoist[Todoist]
-  Backend --> n8nOutbound[n8n Outbound]
+  Slack["Slack or Webhook"] --> n8nInbound["n8n Inbound"]
+  n8nInbound --> Backend["FastAPI Backend"]
+  Backend -->|"RAG via pgvector"| Postgres["Postgres + pgvector"]
+  Backend -->|"Create Task"| Todoist["Todoist"]
+  Backend --> n8nOutbound["n8n Outbound"]
   n8nOutbound --> Slack
-  Backend -->|RAG call| RagAgent[RAG Agent Service]
+  Backend -->|"RAG call"| RagAgent["RAG Agent Service"]
 ```
 
 ## Services
